@@ -1,0 +1,34 @@
+\documentclass{article}
+
+\usepackage{fontawesome}
+\newenvironment{checklist}{
+  \begin{list}{}{}
+  \setlength\itemsep{-.0em}
+  \let\olditem\item
+  \renewcommand\item{\olditem[\faSquareO]}
+  \newcommand\itemchecked{\olditem[\faCheckSquareO]}
+  \newcommand\itembad{\olditem[\faClose]}
+  \newcommand\itemprogress{\olditem[\faSquare]}
+}{
+  \end{list}
+}   
+\newcommand{\indentitem}{\setlength\itemindent{25pt}}
+
+
+\begin{document}
+\textbf{Captain America's To-Do list}
+\begin{checklist}
+	\item I Love Lucy (TV show)
+	\itemchecked Moon Landing
+	\itemchecked Berlin Wall (Up + Down)
+	\item Steve Jobs (Apple)
+	\item Disco
+	\item Thai Food
+	\itemprogress Star Wars/Trek
+	{\indentitem\itemchecked Star Wars}
+	{\indentitem\item Star Trek}
+	\item Nirvana (band)
+	\item Rocky (Rocky II?)
+	\itembad Troubleman (soundtrack)
+\end{checklist}
+\end{document}
